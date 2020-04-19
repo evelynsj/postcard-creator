@@ -14,7 +14,6 @@ header {
     margin: 0 15px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
 }
 
 .choose-image {
@@ -39,4 +38,55 @@ header {
     font-size: 15px;
     margin: 15px 25px;
     padding-bottom: 150px;
+}
+
+/* FONT OPTIONS */
+
+section {
+    margin: 25px 15px;
+    font-family: Arial, sans-serif;
+}
+
+.section-title {
+    font-size: 14px;
+}
+
+.font-options ul {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.font-options li {
+    margin-bottom: 3px;
+}
+
+.font-options a {
+    text-decoration: none;
+    color: black;
+}
+
+/* .font-options li:before {
+    content: '\25C7 \00a0'
+}
+
+.font-options .active:before {
+    content: '\2756 \00a0';
+} */
+
+.indie-flower {
+    font-family: "Indie Flower", sans-serif;
+}
+
+.dancing-script {
+    font-family: "Dancing Script", sans-serif;
+}
+
+.long-cang {
+    font-family: "Long Cang", sans-serif;
+}
+
+.homemade-apple {
+    font-family: "Homemade Apple", sans-serif;
+    font-size: 11px;
+    margin-top: 6px;
 }
