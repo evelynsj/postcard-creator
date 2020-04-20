@@ -97,11 +97,11 @@ section {
 
 /* COLOR OPTIONS */
 
-.color-options {
+.color-options-container {
     margin-top: 10px;
 }
 
-.color-options-container {
+.color-options {
     margin: 5px 0 0 3px;
     display: flex;
     flex-wrap: wrap;
@@ -160,4 +160,16 @@ section {
 
 .square:hover {
     border: 1px dashed black;
+}
+
+/* SHARE POSTCARD */
+
+.share-button {
+    border: 2px solid black;
+    background: none;
+    margin-top: 30px;
+    margin-left: 3px;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: bold;
 }
