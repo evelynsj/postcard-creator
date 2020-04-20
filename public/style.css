@@ -20,9 +20,11 @@ header {
     border: 1px dashed black;
     font-family: Arial, sans-serif;
     font-weight: bold;
-    text-align: center;
-    margin: 25px 25px 0 25px;
-    padding: 70px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 25px 0 25px;
+    min-height: 180px;
 }
 
 .choose-image a {
@@ -37,7 +39,7 @@ header {
     font-family: "Indie Flower", sans-serif;
     font-size: 15px;
     margin: 15px 25px;
-    padding-bottom: 150px;
+    min-height: 180px;
 }
 
 .write-message:focus {
