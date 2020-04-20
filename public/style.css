@@ -65,13 +65,17 @@ section {
     color: black;
 }
 
-/* .font-options li:before {
-    content: '\25C7 \00a0'
+.font-options li:before {
+    content: '\25C7';
+    font-size: 15px;
+    margin: 0 5px 0 2px;
 }
 
 .font-options .active:before {
-    content: '\2756 \00a0';
-} */
+    content: '\2756';
+    font-size: 13px;
+    margin: 0 5px 0 2px;
+}
 
 .indie-flower {
     font-family: "Indie Flower", sans-serif;
