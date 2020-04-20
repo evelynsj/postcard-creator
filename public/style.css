@@ -40,6 +40,10 @@ header {
     padding-bottom: 150px;
 }
 
+.write-message:focus {
+    outline: none;
+}
+
 /* FONT OPTIONS */
 
 section {
