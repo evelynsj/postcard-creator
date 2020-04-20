@@ -94,3 +94,70 @@ section {
     font-size: 11px;
     margin-top: 6px;
 }
+
+/* COLOR OPTIONS */
+
+.color-options {
+    margin-top: 10px;
+}
+
+.color-options-container {
+    margin: 5px 0 0 3px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin: 6px 5px 0 0;
+}
+
+.square:focus {
+    outline: none;
+}
+
+.color-1 {
+    background-color: #e6e2cf;
+}
+
+.color-2 {
+    background-color: #dbcaac;
+}
+
+.color-3 {
+    background-color: #c9cbb3;
+}
+
+.color-4 {
+    background-color: #bbc9ca;
+}
+
+.color-5 {
+    background-color: #a6a5b5;
+}
+
+.color-6 {
+    background-color: #b5a6ab;
+}
+
+.color-7 {
+    background-color: #eccfcf;
+}
+
+.color-8 {
+    background-color: #eceeeb;
+}
+
+.color-9 {
+    background-color: #bab9b5;
+}
+
+.square.active {
+    border: 2px solid black;
+}
+
+.square:hover {
+    border: 1px dashed black;
+}
