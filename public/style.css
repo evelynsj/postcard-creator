@@ -64,6 +64,7 @@ section {
 
 .font-options li {
     margin-bottom: 3px;
+    cursor: pointer;
 }
 
 .font-options a {
@@ -104,7 +105,7 @@ section {
 /* COLOR OPTIONS */
 
 .color-options-container {
-    margin-top: 10px;
+    margin-top: 18px;
 }
 
 .color-options {
