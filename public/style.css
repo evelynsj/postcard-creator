@@ -8,7 +8,7 @@ header {
 
 /* IMAGE CONTAINER */
 
-.image-upload-container {
+.postcard-container {
     border-radius: 3%;
     background: #e6e2cf;
     margin: 0 15px;
@@ -108,7 +108,7 @@ section {
     margin-top: 18px;
 }
 
-.color-options {
+#color-options {
     margin: 5px 0 0 3px;
     display: flex;
     flex-wrap: wrap;
@@ -119,6 +119,7 @@ section {
     height: 30px;
     border: none;
     margin: 6px 5px 0 0;
+    cursor: pointer;
 }
 
 .square:focus {
