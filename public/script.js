@@ -42,9 +42,7 @@ let changeFont = (e) => {
             currentFontIdx = FONTS[currentFont].index;
 
             // set new font for write-message
-            let writeMessage = document.getElementsByClassName(
-                "write-message"
-            )[0];
+            let writeMessage = document.getElementById("write-message");
             let font = FONTS[currentFont].name + ", sans-serif";
             writeMessage.style.fontFamily = font;
             writeMessage.style.fontSize = FONTS[currentFont].size;
@@ -151,13 +149,14 @@ colorOptions.addEventListener("mouseover", viewColor);
 colorOptions.addEventListener("mouseout", revertColor);
 
 // FILE UPLOAD
+let selectedImageName = "";
 
 let uploadFile = () => {
     const imageFile = document.getElementById("image-uploader").files[0];
     const formData = new FormData();
 
     // store image file in formData
-    formData.append("image", imageFile); // TODO: See if need 3rd param
+    formData.append("image", imageFile);
 
     const options = {
         method: "POST",
@@ -171,6 +170,7 @@ let uploadFile = () => {
                 throw Error(res.statusText);
             } else {
                 let image = document.getElementById("image-container");
+                selectedImageName = imageFile.name;
                 image.src = `../images/${imageFile.name}`;
             }
         })
@@ -179,3 +179,58 @@ let uploadFile = () => {
 
 let fileUpload = document.getElementById("image-uploader");
 fileUpload.addEventListener("change", uploadFile);
+
+// SEND POSTCARD
+
+const getCurrentFont = () => {
+    for (let font in FONTS) {
+        if (FONTS[font]["index"] === currentFontIdx) {
+            return FONTS[font]["name"];
+        }
+    }
+};
+
+const getCurrentBackground = () => {
+    for (let color in COLORS) {
+        if (COLORS[color]["index"] === currentColorIdx) {
+            return COLORS[color]["color"];
+        }
+    }
+};
+
+const sendData = () => {
+    console.log("Send Data");
+    let writeMessage = document.getElementById("write-message");
+
+    const data = {
+        name: selectedImageName,
+        message: writeMessage.textContent.trim(),
+        font: `${getCurrentFont()}; sans-serif`,
+        background: getCurrentBackground(),
+    };
+
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+        },
+        body: JSON.stringify(data),
+    };
+
+
+    fetch("/share", options).then((res) => {
+        if (res.ok) {
+            return res.json()
+        } else {
+            return Promise.reject(res)
+        }
+    }).then(data => {
+        console.log(data)
+        // return fetch("/display").then(response => console.log(response))
+        // return window.location = "display"
+        return data
+    })
+};
+
+let shareButton = document.getElementById("share-button");
+shareButton.addEventListener("click", sendData);

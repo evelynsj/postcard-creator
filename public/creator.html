@@ -2,70 +2,74 @@
 <!DOCTYPE html>
 <!-- Message to browser...I think I am HTML -->
 <html lang="en">
-  <!-- My text is in English -->
+    <!-- My text is in English -->
 
-  <head>
-    <meta charset="utf-8" />
-    <!-- Binary encoding of characters -->
-    <title>Postcard App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- This will come in handy later -->
+    <head>
+        <meta charset="utf-8" />
+        <!-- Binary encoding of characters -->
+        <title>Postcard App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- This will come in handy later -->
 
-    <!-- import the webpage's css -->
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+        <!-- import the webpage's css -->
+        <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="style.css" />
 
-    <!-- google fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Dancing+Script|Homemade+Apple|Indie+Flower|Long+Cang&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+        <!-- google fonts -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Dancing+Script|Homemade+Apple|Indie+Flower|Long+Cang&display=swap"
+            rel="stylesheet"
+        />
+    </head>
 
-  <body>
-    <header>
-      <h1>Daily Postcard Creator</h1>
-    </header>
+    <body>
+        <header>
+            <h1>Daily Postcard Creator</h1>
+        </header>
 
-    <main class="postcard-container">
-      <div class="choose-image">
-        <img id="image-container" />
-        <label for="image-uploader">Choose Image</label>
-        <input type="file" id ="image-uploader" accept="image/png, .jpeg, .jpg, image/gif" />
-      </div>
-      <div class="write-message" contenteditable="true">
-        Write your message here!
-      </div>
-    </main>
+        <main class="postcard-container">
+            <div class="choose-image">
+                <img id="image-container" />
+                <label for="image-uploader">Choose Image</label>
+                <input
+                    type="file"
+                    id="image-uploader"
+                    accept="image/png, .jpeg, .jpg, image/gif"
+                />
+            </div>
+            <div id="write-message" contenteditable="true">
+                Write your message here!
+            </div>
+        </main>
 
-    <section>
-      <div class="font-options">
-        <p class="section-title">Choose your font</p>
-        <ul id="font-styles">
-          <li class="indie-flower active">Indie Flower</li>
-          <li class="dancing-script">Dancing Script</li>
-          <li class="long-cang">Long Cang</li>
-          <li class="homemade-apple">Homemade Apple</li>
-        </ul>
-      </div>
-      <div class="color-options-container">
-        <p class="section-title">Choose your color</p>
-        <div id="color-options">
-          <button class="square color-1 active"></button>
-          <button class="square color-2"></button>
-          <button class="square color-3"></button>
-          <button class="square color-4"></button>
-          <button class="square color-5"></button>
-          <button class="square color-6"></button>
-          <button class="square color-7"></button>
-          <button class="square color-8"></button>
-          <button class="square color-9"></button>
-        </div> 
-      </div>
-      <button class="share-button">Share postcard</button>
-    </section>
+        <section>
+            <div class="font-options">
+                <p class="section-title">Choose your font</p>
+                <ul id="font-styles">
+                    <li class="indie-flower active">Indie Flower</li>
+                    <li class="dancing-script">Dancing Script</li>
+                    <li class="long-cang">Long Cang</li>
+                    <li class="homemade-apple">Homemade Apple</li>
+                </ul>
+            </div>
+            <div class="color-options-container">
+                <p class="section-title">Choose your color</p>
+                <div id="color-options">
+                    <button class="square color-1 active"></button>
+                    <button class="square color-2"></button>
+                    <button class="square color-3"></button>
+                    <button class="square color-4"></button>
+                    <button class="square color-5"></button>
+                    <button class="square color-6"></button>
+                    <button class="square color-7"></button>
+                    <button class="square color-8"></button>
+                    <button class="square color-9"></button>
+                </div>
+            </div>
+            <button id="share-button">Share postcard</button>
+        </section>
 
-    <!-- import the webpage's browser-side javascript file -->
-    <script src="script.js"></script>
-  </body>
+        <!-- import the webpage's browser-side javascript file -->
+        <script src="script.js"></script>
+    </body>
 </html>

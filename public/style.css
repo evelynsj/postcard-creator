@@ -39,7 +39,7 @@ header {
     color: #000000;
 }
 
-.write-message {
+#write-message {
     font-family: "Indie Flower", sans-serif;
     font-size: 15px;
     margin: 15px 25px;
@@ -176,7 +176,7 @@ section {
 
 /* SHARE POSTCARD */
 
-.share-button {
+#share-button {
     border: 2px solid black;
     background: none;
     margin-top: 30px;
