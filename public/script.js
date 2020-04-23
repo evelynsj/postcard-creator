@@ -1,6 +1,6 @@
 const ACTIVE = "active";
 
-// Change fonts
+// CHANGE FONT
 
 const FONTS = {
     "indie-flower": {
@@ -57,7 +57,7 @@ let changeFont = (e) => {
 
 fontStyles.addEventListener("click", changeFont);
 
-// Change color
+// CHANGE COLOR
 
 const COLORS = {
     "color-1": {
@@ -149,3 +149,33 @@ let revertColor = (e) => {
 colorOptions.addEventListener("click", changeColor);
 colorOptions.addEventListener("mouseover", viewColor);
 colorOptions.addEventListener("mouseout", revertColor);
+
+// FILE UPLOAD
+
+let uploadFile = () => {
+    const imageFile = document.getElementById("image-uploader").files[0];
+    const formData = new FormData();
+
+    // store image file in formData
+    formData.append("image", imageFile); // TODO: See if need 3rd param
+
+    const options = {
+        method: "POST",
+        body: formData,
+    };
+
+    fetch("/upload", options)
+        .then((res) => {
+            console.log(res);
+            if (!res.ok) {
+                throw Error(res.statusText);
+            } else {
+                let image = document.getElementById("image-container");
+                image.src = `../images/${imageFile.name}`;
+            }
+        })
+        .catch((err) => console.log(err));
+};
+
+let fileUpload = document.getElementById("image-uploader");
+fileUpload.addEventListener("change", uploadFile);

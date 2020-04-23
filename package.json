@@ -1,0 +1,24 @@
+{
+  "name": "postcard-creator",
+  "version": "1.0.0",
+  "description": "Postcard Creator",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evelynsj/postcard-creator.git"
+  },
+  "author": "Evelyn Sjafii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evelynsj/postcard-creator/issues"
+  },
+  "homepage": "https://github.com/evelynsj/postcard-creator#readme"
+}

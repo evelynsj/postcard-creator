@@ -27,8 +27,12 @@ header {
     min-height: 180px;
 }
 
-.choose-image a {
-    text-decoration: none;
+.choose-image label {
+    cursor: pointer;
+}
+
+.choose-image #image-uploader {
+    display: none;
 }
 
 .choose-image a:visited {
