@@ -171,6 +171,29 @@ let uploadFile = () => {
             } else {
                 let image = document.getElementById("image-container");
                 selectedImageName = imageFile.name;
+
+                let writeMessage = document.getElementById("write-message");
+                writeMessage.style.marginTop = "5px"
+
+                // remove dashed border
+                let imageContainer = document.getElementById("choose-image");
+                imageContainer.style.border = "none";
+                imageContainer.style.margin = "15px 15px 0 15px"
+                imageContainer.style.maxWidth = "none";
+                // change label to replace image
+                let label = document.getElementById("image-uploader-label");
+                label.textContent = "Replace image";
+                label.style.fontSize = "15px";
+
+                let divider = document.getElementById("divider");
+                divider.style.display = "block"
+
+                // move label position
+                let inputContainer = document.getElementById("input-container");
+                inputContainer.style.border = "1px solid black"
+                inputContainer.style.margin = "10px 0 0 0"
+                inputContainer.style.padding = "5px 15px"
+
                 image.src = `../images/${imageFile.name}`;
             }
         })
@@ -227,8 +250,7 @@ const sendData = () => {
     }).then(data => {
         console.log(data)
         // return fetch("/display").then(response => console.log(response))
-        // return window.location = "display"
-        return data
+        return window.location = "display"
     })
 };
 

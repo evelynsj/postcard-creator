@@ -28,14 +28,19 @@
         </header>
 
         <main class="postcard-container">
-            <div class="choose-image">
+            <div id="choose-image">
                 <img id="image-container" />
-                <label for="image-uploader">Choose Image</label>
-                <input
-                    type="file"
-                    id="image-uploader"
-                    accept="image/png, .jpeg, .jpg, image/gif"
-                />
+                <div id="input-container">
+                    <label id="image-uploader-label" for="image-uploader"
+                        >Choose Image</label
+                    >
+                    <input
+                        type="file"
+                        id="image-uploader"
+                        accept="image/png, .jpeg, .jpg, image/gif"
+                    />
+                </div>
+                <hr id="divider" />
             </div>
             <div id="write-message" contenteditable="true">
                 Write your message here!
