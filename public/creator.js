@@ -59,6 +59,10 @@ const uploadFile = () => {
         body: formData,
     };
 
+    const inputLabel = document.getElementById(
+        "image-uploader-label"
+    );
+    inputLabel.textContent = "Uploading...";
     fetch("/upload", options)
         .then((res) => {
             if (res.ok) {
@@ -77,11 +81,6 @@ const uploadFile = () => {
             if (!postcard.image) {
                 container.classList.remove("image-choose");
                 container.classList.add("image-replace");
-
-                const inputLabel = document.getElementById(
-                    "image-uploader-label"
-                );
-                inputLabel.textContent = "Uploading...";
 
                 const messageContainer = document.getElementById("write-message");
                 messageContainer.classList.add("message-image");
