@@ -30,14 +30,11 @@ app.get("/display", (_, res) => {
     res.sendFile(__dirname + "/public/display.html");
 });
 
-app.listen(port, () => console.log("Listening to port", port));
-
 app.post("/upload", uploadMulter.single("image"), (req, res) => {
     console.log("Processing", req.file.originalname, req.file.size, "bytes");
     if (req.file) {
         res.json({
-            success: true,
-            message: `${req.file.originalname} has been uploaded to ${imagePath}`,
+            file: req.file
         });
     } else {
         throw err;
@@ -70,3 +67,6 @@ app.get("/getPostcard", (req, res) => {
     })
 
 });
+
+// listen to requests
+app.listen(port, () => console.log("Listening to port", port));

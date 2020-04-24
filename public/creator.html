@@ -1,15 +1,9 @@
-<!-- This is the awful HTML comment syntax -->
 <!DOCTYPE html>
-<!-- Message to browser...I think I am HTML -->
 <html lang="en">
-    <!-- My text is in English -->
-
     <head>
         <meta charset="utf-8" />
-        <!-- Binary encoding of characters -->
         <title>Postcard App</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!-- This will come in handy later -->
 
         <!-- import the webpage's css -->
         <link rel="stylesheet" href="reset.css" />
@@ -28,7 +22,7 @@
         </header>
 
         <main class="postcard-container">
-            <div id="choose-image">
+            <div class="image-choose">
                 <img id="image-container" />
                 <div id="input-container">
                     <label id="image-uploader-label" for="image-uploader"
@@ -40,14 +34,11 @@
                         accept="image/png, .jpeg, .jpg, image/gif"
                     />
                 </div>
-                <hr id="divider" />
             </div>
-            <div id="write-message" contenteditable="true">
-                Write your message here!
-            </div>
+            <div id="write-message" contenteditable="true">Write your message here!</div>
         </main>
 
-        <section>
+        <!-- <section>
             <div class="font-options">
                 <p class="section-title">Choose your font</p>
                 <ul id="font-styles">
@@ -72,7 +63,7 @@
                 </div>
             </div>
             <button id="share-button">Share postcard</button>
-        </section>
+        </section> -->
 
         <!-- import the webpage's browser-side javascript file -->
         <script src="script.js"></script>
