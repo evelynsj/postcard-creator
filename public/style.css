@@ -349,7 +349,7 @@ section {
         min-height: 250px;
     }
     #write-message {
-        font-size: 15px;
+        font-size: 18px;
     }
     section {
         width: 50%;
@@ -389,6 +389,6 @@ section {
     }
 
     #message-display {
-        font-size: 15px;
+        font-size: 18px;
     }
 }
