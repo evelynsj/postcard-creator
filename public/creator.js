@@ -1,6 +1,29 @@
+
+/* CONSTANTS */
+
+const FONTS = {
+    "indie-flower": {
+        name: "Indie Flower",
+        // size: "15px",
+    },
+    "dancing-script": {
+        name: "Dancing Script",
+        // size: "18px",
+    },
+    "long-cang": {
+        name: "Long Cang",
+        // size: "18px",
+    },
+    "homemade-apple": {
+        name: "Homemade Apple",
+        // size: "12px",
+    },
+};
+
 class Postcard {
     constructor() {
-        (this.background = "white-rock"), (this.font = "indie-flower");
+        this.background = "white-rock";
+        this.font = "indie-flower";
         this.image = null;
         this.text = "Write your message here!";
     }
@@ -10,8 +33,9 @@ class Postcard {
 
 const uploadFile = () => {
     const imageFile = document.getElementById("image-uploader").files[0];
+           
+    // no file chosen
     if (!imageFile) {
-        // no file chosen
         return;
     }
     const formData = new FormData();
@@ -71,6 +95,24 @@ document
 document
     .getElementById("write-message")
     .addEventListener("input", writeMessage);
+
+/* DYNAMIC LOADING */
+
+const fontsList = document.getElementById("font-styles");
+let i = 0;
+
+for (let font in FONTS) {
+
+    let listItem = document.createElement('li');
+    listItem.appendChild(document.createTextNode(FONTS[font]["name"]));
+    listItem.classList.add(font);
+    if (i === 0) {
+        listItem.classList.add('active');
+        i++;
+    }
+    console.log(listItem)
+    fontsList.append(listItem)
+}
 
 /* CALL CONSTRUCTOR */
 
