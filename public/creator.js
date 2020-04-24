@@ -19,6 +19,18 @@ const FONTS = {
     },
 };
 
+const COLORS = {
+    "white-rock": "#e6e2cf",
+    "akaroa": "#dbcaac",
+    "foggy-gray": "#c9cbb3",
+    "submarine": "#bbc9ca",
+    "spun-pearl": "#a6a5b5",
+    "pink-swan": "#b5a6ab",
+    "oyster-pink": "#eccfcf",
+    "gray-nurse": "#eceeeb",
+    "gray-nickel": "#bab9b5"
+}
+
 class Postcard {
     constructor() {
         this.background = "white-rock";
@@ -140,6 +152,8 @@ document.getElementById("font-styles").addEventListener("click", changeFont);
 
 /* DYNAMIC LOADING */
 
+// LOAD FONTS
+
 const fontsList = document.getElementById("font-styles");
 let i = 0;
 
@@ -152,6 +166,22 @@ for (let font in FONTS) {
         i++;
     }
     fontsList.append(listItem);
+}
+
+// LOAD COLORS
+
+const colorsContainer = document.getElementById("color-options");
+let j = 0;
+
+for (let color in COLORS) {
+    let button = document.createElement("button");
+    button.style.background = COLORS[color];
+    button.classList.add("square");
+    if (j === 0) {
+        button.classList.add("active");
+        ++j;
+    }
+    colorsContainer.append(button);
 }
 
 /* CALL CONSTRUCTOR */
