@@ -68,22 +68,22 @@ const uploadFile = () => {
             }
         })
         .then((data) => {
-            let image = document.getElementById("image-container");
+            const image = document.getElementById("image-container");
             image.src = `../images/${data.file.originalname}`;
 
-            let container = document.getElementsByClassName("image-choose")[0];
+            const container = document.getElementsByClassName("image-choose")[0];
 
             // no image uploaded yet
             if (!postcard.image) {
                 container.classList.remove("image-choose");
                 container.classList.add("image-replace");
 
-                let inputLabel = document.getElementById(
+                const inputLabel = document.getElementById(
                     "image-uploader-label"
                 );
-                inputLabel.textContent = "Replace Image";
+                inputLabel.textContent = "Uploading...";
 
-                let messageContainer = document.getElementById("write-message");
+                const messageContainer = document.getElementById("write-message");
                 messageContainer.classList.add("message-image");
             }
 
@@ -139,7 +139,7 @@ const changeFont = (e) => {
                     listItems[i].classList.add("active");
 
                     // change write message font
-                    let writeMessage = document.getElementById("write-message");
+                    const writeMessage = document.getElementById("write-message");
                     writeMessage.style.fontFamily = createFontString(
                         selectedFont
                     );
@@ -217,6 +217,11 @@ const writeMessage = () => {
     postcard.text = message.textContent;
 };
 
+const imageLoaded = () => {
+    const label = document.getElementById("image-uploader-label");
+    label.textContent = "Replace Image";
+}
+
 /* UTIL FUNCTION */
 
 const createFontString = (font) => {
@@ -228,6 +233,8 @@ const createFontString = (font) => {
 document
     .getElementById("image-uploader")
     .addEventListener("change", uploadFile);
+
+document.getElementById("image-container").addEventListener("load", imageLoaded);
 
 document
     .getElementById("write-message")
