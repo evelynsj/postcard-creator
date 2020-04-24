@@ -1,0 +1,42 @@
+<!-- This is the awful HTML comment syntax -->
+<!DOCTYPE html>
+<!-- Message to browser...I think I am HTML -->
+<html lang="en">
+  <!-- My text is in English -->
+
+  <head>
+    <meta charset="utf-8" />
+    <!-- Binary encoding of characters -->
+    <title>Postcard App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- This will come in handy later -->
+
+    <!-- import the webpage's css -->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Dancing+Script|Homemade+Apple|Indie+Flower|Long+Cang&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>Daily Postcard</h1>
+    </header>
+
+    <main id="postcard-display-container">
+        <div id="wrapper">
+            <img id="image-display" />
+            <div id="message-display"></div>
+        </div>
+      
+    </main>
+
+
+    <!-- import the webpage's browser-side javascript file -->
+    <script src="display.js"></script>
+  </body>
+</html>
