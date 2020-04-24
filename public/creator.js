@@ -21,15 +21,15 @@ const FONTS = {
 
 const COLORS = {
     "white-rock": "#e6e2cf",
-    "akaroa": "#dbcaac",
+    akaroa: "#dbcaac",
     "foggy-gray": "#c9cbb3",
-    "submarine": "#bbc9ca",
+    submarine: "#bbc9ca",
     "spun-pearl": "#a6a5b5",
     "pink-swan": "#b5a6ab",
     "oyster-pink": "#eccfcf",
     "gray-nurse": "#eceeeb",
-    "gray-nickel": "#bab9b5"
-}
+    "gray-nickel": "#bab9b5",
+};
 
 class Postcard {
     constructor() {
@@ -40,7 +40,7 @@ class Postcard {
     }
 }
 
-/* FILE UPLOAD */
+// UPLOAD FILE
 
 const uploadFile = () => {
     const imageFile = document.getElementById("image-uploader").files[0];
@@ -92,7 +92,7 @@ const uploadFile = () => {
         .catch((err) => console.log(err));
 };
 
-/* CHANGE FONT */
+// CHANGE FONT
 
 const changeFont = (e) => {
     if (e.target && e.target.nodeName === "LI") {
@@ -127,6 +127,38 @@ const changeFont = (e) => {
     }
 };
 
+// CHANGE COLOR
+
+const changeColor = (e) => {
+    if (e.target && e.target.nodeName === "BUTTON") {
+        if (e.target.classList[1] === postcard.background) {
+            return; // already active
+        } else {
+            const colorButtons = document.getElementsByClassName("square");
+            const currentColor = postcard.background;
+            const selectedColor = e.target.classList[1];
+
+            for (let i = 0; i < colorButtons.length; ++i) {
+                // remove active from current color
+                if (colorButtons[i].classList[1] === currentColor) {
+                    colorButtons[i].classList.remove("active");
+                }
+                // add active to new color
+                else if (colorButtons[i].classList[1] === selectedColor) {
+                    colorButtons[i].classList.add("active");
+                    // change postcard background
+                    const postcardContainer = document.getElementsByClassName(
+                        "postcard-container"
+                    )[0];
+                    postcardContainer.style.background = COLORS[selectedColor];
+                    // set postcard.background
+                    postcard.background = selectedColor;
+                }
+            }
+        }
+    }
+};
+
 const writeMessage = () => {
     const message = document.getElementById("write-message");
     postcard.text = message.textContent.trim();
@@ -149,6 +181,8 @@ document
     .addEventListener("input", writeMessage);
 
 document.getElementById("font-styles").addEventListener("click", changeFont);
+
+document.getElementById("color-options").addEventListener("click", changeColor);
 
 /* DYNAMIC LOADING */
 
@@ -177,6 +211,7 @@ for (let color in COLORS) {
     let button = document.createElement("button");
     button.style.background = COLORS[color];
     button.classList.add("square");
+    button.classList.add(color);
     if (j === 0) {
         button.classList.add("active");
         ++j;
