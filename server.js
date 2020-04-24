@@ -42,7 +42,8 @@ app.post("/upload", uploadMulter.single("image"), (req, res) => {
 });
 
 app.post("/share", (req, res) => {
-    const fileName = "data.json";
+    const fileName = "postcardData.json";
+
     // write to file
     fs.writeFile(fileName, JSON.stringify(req.body), (err) => {
         console.log("Writing data to file...");
@@ -53,7 +54,6 @@ app.post("/share", (req, res) => {
     
     // send response
     res.json({
-        success: true,
         message: `Data successfully written to ${fileName}`
     })
 });

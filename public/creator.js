@@ -92,6 +92,31 @@ const uploadFile = () => {
         .catch((err) => console.log(err));
 };
 
+// SEND FILE
+
+const sendFile = () => {
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+        },
+        body: JSON.stringify(postcard),
+    };
+
+    fetch("/share", options)
+        .then((res) => {
+            if (res.ok) {
+                return res.json();
+            } else {
+                return Promise.reject(res);
+            }
+        })
+        .then((data) => {
+            console.log(data.message);
+            return (window.location = "display");
+        });
+};
+
 // CHANGE FONT
 
 const changeFont = (e) => {
@@ -161,7 +186,7 @@ const changeColor = (e) => {
 
 const writeMessage = () => {
     const message = document.getElementById("write-message");
-    postcard.text = message.textContent.trim();
+    postcard.text = message.textContent;
 };
 
 /* UTIL FUNCTION */
@@ -183,6 +208,8 @@ document
 document.getElementById("font-styles").addEventListener("click", changeFont);
 
 document.getElementById("color-options").addEventListener("click", changeColor);
+
+document.getElementById("share-button").addEventListener("click", sendFile);
 
 /* DYNAMIC LOADING */
 
