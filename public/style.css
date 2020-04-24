@@ -67,6 +67,7 @@ header {
     font-size: 15px;
     margin: 15px 25px;
     min-height: 180px;
+    line-height: 1.5;
 }
 
 #write-message:focus {
@@ -155,42 +156,6 @@ section {
     outline: none;
 }
 
-.color-1 {
-    background-color: #e6e2cf;
-}
-
-.color-2 {
-    background-color: #dbcaac;
-}
-
-.color-3 {
-    background-color: #c9cbb3;
-}
-
-.color-4 {
-    background-color: #bbc9ca;
-}
-
-.color-5 {
-    background-color: #a6a5b5;
-}
-
-.color-6 {
-    background-color: #b5a6ab;
-}
-
-.color-7 {
-    background-color: #eccfcf;
-}
-
-.color-8 {
-    background-color: #eceeeb;
-}
-
-.color-9 {
-    background-color: #bab9b5;
-}
-
 .square.active {
     border: 2px solid #000000;
 }
@@ -206,9 +171,11 @@ section {
     background: none;
     margin-top: 30px;
     margin-left: 3px;
-    padding: 5px 15px;
+    padding: 8px 15px;
     font-size: 12px;
     font-weight: bold;
+    cursor: pointer;
+    width: 50%;
 }
 
 @media screen and (min-width: 600px) {
@@ -269,21 +236,43 @@ section {
     }
 
     section {
-        /* border: 1px solid black; */
         width: 80%;
         margin: 50px auto;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .font-options {
+        width: 40%;
+    }
+
+    .color-options-container {
+        margin: 0;
+    }
+
+    #share-button {
+        border: 2px solid black;
+        margin: 0;
+        padding: 10px;
+        font-size: 18px;
+        width: 50%;
     }
 
     .section-title {
         font-size: 18px;
     }
 
+    .square {
+        width: 35px;
+        height: 35px;
+    }
+
     .font-options ul {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .font-options .homemade-apple {
-        font-size: 14px;
+        font-size: 13px;
     }
 }
 
@@ -308,5 +297,34 @@ section {
     }
     section {
         width: 50%;
+    }
+
+    .font-options {
+        align-self: flex-start;
+        width: 50%;
+    }
+
+    .color-options-container {
+        align-self: flex-start;
+        margin-right: 50px;
+        padding: 0 25px;
+    }
+
+    #share-button {
+        border: 2px solid black;
+        font-size: 15px;
+        width: 40%;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .font-options ul {
+        font-size: 18px;
+    }
+
+    .font-options .homemade-apple {
+        font-size: 15px;
     }
 }
