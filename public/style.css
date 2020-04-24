@@ -11,7 +11,8 @@ header {
 .postcard-container {
     border-radius: 3%;
     background: #e6e2cf;
-    margin: 0 15px;
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif;
@@ -67,7 +68,7 @@ header {
     font-size: 15px;
     margin: 15px 25px;
     min-height: 180px;
-    line-height: 1.5;
+    line-height: 1.8;
 }
 
 #write-message:focus {
@@ -178,6 +179,36 @@ section {
     width: 50%;
 }
 
+/* DISPLAY IMAGE */
+
+#postcard-display-container {
+    width: 90%;
+    margin: 15px auto;
+    min-height: 450px;
+    border-radius: 5px;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#image-display {
+    max-width: 100%;
+    width: 90%;
+    margin-top: 15px;
+    border-bottom: 1px solid black;
+}
+
+#message-display {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 80%;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
 @media screen and (min-width: 600px) {
     header {
         padding: 40px;
@@ -243,7 +274,7 @@ section {
     }
 
     .font-options {
-        width: 40%
+        width: 40%;
     }
 
     .color-options-container {
@@ -251,7 +282,7 @@ section {
     }
 
     #share-button {
-        border: 2px solid black;
+        border: 2px solid #000000;
         margin: 0;
         padding: 10px;
         font-size: 18px;
@@ -273,6 +304,31 @@ section {
 
     .font-options .homemade-apple {
         font-size: 13px;
+    }
+
+    #postcard-display-container {
+        width: 80%;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    #wrapper {
+        flex-direction: row;
+        align-items: flex-start;
+        margin: 0 20px;
+    }
+
+    #image-display {
+        width: 50%;
+        margin: 0;
+        border-right: 1px solid black;
+        border-bottom: none;
+    }
+
+    #message-display {
+        margin: 15px 0 0 15px;
+        font-size: 18px;
     }
 }
 
@@ -301,13 +357,13 @@ section {
 
     .font-options {
         align-self: flex-start;
-        width: 50%
+        width: 50%;
     }
 
     .color-options-container {
         align-self: flex-start;
         margin-right: 50px;
-        padding: 0 25px
+        padding: 0 25px;
     }
 
     #share-button {
@@ -325,6 +381,14 @@ section {
     }
 
     .font-options .homemade-apple {
+        font-size: 15px;
+    }
+
+    #postcard-display-container {
+        width: 50%;
+    }
+
+    #message-display {
         font-size: 15px;
     }
 }

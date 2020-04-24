@@ -34,7 +34,7 @@ app.post("/upload", uploadMulter.single("image"), (req, res) => {
     console.log("Processing", req.file.originalname, req.file.size, "bytes");
     if (req.file) {
         res.json({
-            file: req.file
+            file: req.file,
         });
     } else {
         throw err;
@@ -51,21 +51,22 @@ app.post("/share", (req, res) => {
             throw err;
         }
     });
-    
+
     // send response
     res.json({
-        message: `Data successfully written to ${fileName}`
-    })
+        message: `Data successfully written to ${fileName}`,
+    });
 });
 
 app.get("/getPostcard", (req, res) => {
-    console.log("Heya")
-    
-    fs.readFile("data.json", 'utf-8', (err, content) => {
-        console.log(content)
-        res.json(content)
-    })
+    const fileName = "postcardData.json";
 
+    fs.readFile(fileName, "utf-8", (err, content) => {
+        if (err) {
+            throw err;
+        }
+        res.json(content);
+    });
 });
 
 // listen to requests

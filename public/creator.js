@@ -21,9 +21,9 @@ const FONTS = {
 
 const COLORS = {
     "white-rock": "#e6e2cf",
-    akaroa: "#dbcaac",
+    "akaroa": "#dbcaac",
     "foggy-gray": "#c9cbb3",
-    submarine: "#bbc9ca",
+    "submarine": "#bbc9ca",
     "spun-pearl": "#a6a5b5",
     "pink-swan": "#b5a6ab",
     "oyster-pink": "#eccfcf",
