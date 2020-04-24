@@ -1,22 +1,21 @@
-
 /* CONSTANTS */
 
 const FONTS = {
     "indie-flower": {
         name: "Indie Flower",
-        // size: "15px",
+        size: "15px",
     },
     "dancing-script": {
         name: "Dancing Script",
-        // size: "18px",
+        size: "18px",
     },
     "long-cang": {
         name: "Long Cang",
-        // size: "18px",
+        size: "18px",
     },
     "homemade-apple": {
         name: "Homemade Apple",
-        // size: "12px",
+        size: "12px",
     },
 };
 
@@ -29,11 +28,11 @@ class Postcard {
     }
 }
 
-// FILE UPLOAD
+/* FILE UPLOAD */
 
 const uploadFile = () => {
     const imageFile = document.getElementById("image-uploader").files[0];
-           
+
     // no file chosen
     if (!imageFile) {
         return;
@@ -81,9 +80,50 @@ const uploadFile = () => {
         .catch((err) => console.log(err));
 };
 
+/* CHANGE FONT */
+
+const changeFont = (e) => {
+    if (e.target && e.target.nodeName === "LI") {
+        if (e.target.classList[0] === postcard.font) {
+            return;
+        } else {
+            const listItems = document
+                .getElementById("font-styles")
+                .getElementsByTagName("li");
+            const currentFont = postcard.font;
+            const selectedFont = e.target.classList[0];
+
+            for (let i = 0; i < listItems.length; ++i) {
+                // remove active class from current
+                if (listItems[i].classList[0] === currentFont) {
+                    listItems[i].classList.remove("active");
+                } else if (listItems[i].classList[0] === selectedFont) {
+                    // add active class to chosen
+                    listItems[i].classList.add("active");
+
+                    // change write message font
+                    let writeMessage = document.getElementById("write-message");
+                    writeMessage.style.fontFamily = createFontString(
+                        selectedFont
+                    );
+                    writeMessage.style.fontSize = FONTS[selectedFont]["size"];
+
+                    postcard.font = selectedFont;
+                }
+            }
+        }
+    }
+};
+
 const writeMessage = () => {
     const message = document.getElementById("write-message");
     postcard.text = message.textContent.trim();
+};
+
+/* UTIL FUNCTION */
+
+const createFontString = (font) => {
+    return `${FONTS[font]["name"]}, sans-serif`;
 };
 
 /* EVENT LISTENERS */
@@ -96,22 +136,22 @@ document
     .getElementById("write-message")
     .addEventListener("input", writeMessage);
 
+document.getElementById("font-styles").addEventListener("click", changeFont);
+
 /* DYNAMIC LOADING */
 
 const fontsList = document.getElementById("font-styles");
 let i = 0;
 
 for (let font in FONTS) {
-
-    let listItem = document.createElement('li');
+    let listItem = document.createElement("li");
     listItem.appendChild(document.createTextNode(FONTS[font]["name"]));
     listItem.classList.add(font);
     if (i === 0) {
-        listItem.classList.add('active');
+        listItem.classList.add("active");
         i++;
     }
-    console.log(listItem)
-    fontsList.append(listItem)
+    fontsList.append(listItem);
 }
 
 /* CALL CONSTRUCTOR */
